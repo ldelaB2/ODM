@@ -27,13 +27,11 @@ ensure_prereqs() {
     echo "Installing tzdata"
     sudo $APT_GET install -y -qq tzdata
 
-    UBUNTU_VERSION=$(lsb_release -r)
-    if [[ "$UBUNTU_VERSION" == *"20.04"* ]]; then
-        echo "Enabling PPA for Ubuntu GIS"
-        sudo $APT_GET install -y -qq --no-install-recommends software-properties-common
-        sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
-        sudo $APT_GET update
-    fi
+    echo "Installing libxml2-dev"
+    sudo $APT_GET install -y -qq --no-install-recommends libxml2-dev
+
+    echo "Installing libxslt-dev"
+    sudo $APT_GET install -y -qq --no-install-recommends libxslt-dev
 
     echo "Installing Python PIP"
     sudo $APT_GET install -y -qq --no-install-recommends \
