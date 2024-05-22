@@ -30,6 +30,9 @@ ensure_prereqs() {
     echo "Installing libxml2-dev"
     sudo $APT_GET install -y -qq --no-install-recommends libxml2-dev
 
+    echo "Installing libgdal-dev"
+    sudo $APT_GET install -y -qq --no-install-recommends libgdal-dev
+
     echo "Installing libxslt-dev"
     sudo $APT_GET install -y -qq --no-install-recommends libxslt-dev
 
