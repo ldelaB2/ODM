@@ -91,14 +91,8 @@ installreqs() {
     # edt requires numpy to build
     pip install --ignore-installed numpy==1.23.1
 
-
-    echo "I like to fail here"
-    pip install --ignore-installed rasterio
-
-
     pip install --ignore-installed -r requirements.txt
-    #if [ ! -z "$GPU_INSTALL" ]; then
-    #fi
+
     set +e
 }
 
